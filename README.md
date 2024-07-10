@@ -10,8 +10,35 @@ The pretrained model XLSR can be found at [link](https://dl.fbaipublicfiles.com/
 
 We have uploaded pretrained models of our experiments. You can download pretrained models from [OneDrive](https://entuedu-my.sharepoint.com/:f:/g/personal/truongdu001_e_ntu_edu_sg/El7AV62BKkdKhOYCyB3s2EkBLr-aVdj0doH0HNj9mTIsGA?e=aOlRCB). 
 
+## Setting up environment
+Python version: 3.7.16
+
+Install PyTorch
+```bash
+pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 torchaudio==0.8.1 -f https://download.pytorch.org/whl/torch_stable.html
+```
+
+Install other libraries:
+```bash
+pip install -r requirements.txt
+```
+
+Install fairseq:
+```bash
+git clone https://github.com/facebookresearch/fairseq.git
+cd fairseq
+git checkout a54021305d6b3c
+pip install --editable ./
+```
+
 ## Training
 The full training script will be uploaded soon after cleaning the code base.
+
+## Inference
+To run inference on a single wav file with the pretrained model, run:
+```bash
+python inference.py --ckpt_path=path_to/model.pth --wav_path=path_to/audio.flac
+```
 
 ## Citation
 If you find our repository valuable for your work, please consider giving a start to this repo and citing our paper:
