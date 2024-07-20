@@ -25,20 +25,30 @@ pip install -r requirements.txt
 
 Install fairseq:
 ```bash
-git clone https://github.com/facebookresearch/fairseq.git
-cd fairseq
+git clone https://github.com/facebookresearch/fairseq.git fairseq_dir
+cd fairseq_dir
 git checkout a54021305d6b3c
 pip install --editable ./
 ```
 
-## Training
-The full training script will be uploaded soon after cleaning the code base.
+## Training & Testing on fixed-length input
+To train and produce the score for LA set evaluation, run:
+```bash
+python main.py --algo 5
+```
+
+To train and produce the score for DF set evaluation, run:
+```bash
+python main.py --algo 3
+```
 
 ## Inference
 To run inference on a single wav file with the pretrained model, run:
 ```bash
-python inference.py --ckpt_path=path_to/model.pth --wav_path=path_to/audio.flac
+python inference.py --ckpt_path=path_to/model.pth --threshold=-3.73 --wav_path=path_to/audio.flac
 ```
+The threshold can be obtained when calculating EER on LA or DF set. In this example, the threshold is from DF set
+evaluation.
 
 ## Citation
 If you find our repository valuable for your work, please consider giving a start to this repo and citing our paper:
@@ -57,6 +67,8 @@ If you find our repository valuable for your work, please consider giving a star
 ### Acknowledge
 
 Our work is built upon the [conformer-based-classifier-for-anti-spoofing](https://github.com/ErosRos/conformer-based-classifier-for-anti-spoofing) We also follow some parts of the following codebases:
+
+[SSL_Anti-spoofing](https://github.com/TakHemlata/SSL_Anti-spoofing) (for training pipeline).
 
 [conformer](https://github.com/lucidrains/conformer) (for Conformer model architechture).
 
