@@ -53,14 +53,14 @@ evaluation.
 ## Citation
 If you find our repository valuable for your work, please consider giving a start to this repo and citing our paper:
 ```
-@misc{tcm,
-      title={Temporal-Channel Modeling in Multi-head Self-Attention for Synthetic Speech Detection}, 
-      author={Duc-Tuan Truong and Ruijie Tao and Tuan Nguyen and Hieu-Thi Luong and Kong Aik Lee and Eng Siong Chng},
-      year={2024},
-      eprint={2406.17376},
-      archivePrefix={arXiv},
-      primaryClass={cs.SD},
-      url={https://arxiv.org/abs/2406.17376}, 
+@inproceedings{truong24b_interspeech,
+  title     = {Temporal-Channel Modeling in Multi-head Self-Attention for Synthetic Speech Detection},
+  author    = {Duc-Tuan Truong and Ruijie Tao and Tuan Nguyen and Hieu-Thi Luong and Kong Aik Lee and Eng Siong Chng},
+  year      = {2024},
+  booktitle = {Interspeech 2024},
+  pages     = {537--541},
+  doi       = {10.21437/Interspeech.2024-659},
+  issn      = {2958-1796},
 }
 ```
 
