@@ -41,7 +41,13 @@ To train and produce the score for DF set evaluation, run:
 ```bash
 python main.py --algo 3
 ```
-
+## Scoring
+To get evaluation results of minimum t-DCF and EER (Equal Error Rate), follow these steps:
+```bash
+cd 2021/eval-package
+python main.py --cm-score-file your_LA_score.txt --track LA --subset eval # For LA track evaluation
+python main.py --cm-score-file your_DF_score.txt --track DF --subset eval # For DF track evaluation
+```
 ## Inference
 To run inference on a single wav file with the pretrained model, run:
 ```bash

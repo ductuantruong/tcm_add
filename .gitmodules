@@ -1,0 +1,3 @@
+[submodule "2021"]
+	path = 2021
+	url = https://github.com/asvspoof-challenge/2021.git
