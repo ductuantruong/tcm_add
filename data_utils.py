@@ -39,3 +39,21 @@ class Dataset_eval(Dataset):
         X_pad = pad(X,self.cut)
         x_inp = Tensor(X_pad)
         return x_inp, utt_id  
+
+class Dataset_in_the_wild_eval(Dataset):
+    def __init__(self, list_IDs, base_dir):
+        '''self.list_IDs	: list of strings (each string: utt key),
+               '''
+        self.list_IDs = list_IDs
+        self.base_dir = base_dir
+        self.cut = 64600  # take ~4 sec audio (64600 samples)
+
+    def __len__(self):
+        return len(self.list_IDs)
+
+    def __getitem__(self, index):
+        utt_id = self.list_IDs[index]
+        X, fs = librosa.load(self.base_dir + utt_id, sr=16000)
+        X_pad = pad(X, self.cut)
+        x_inp = Tensor(X_pad)
+        return x_inp, utt_id
